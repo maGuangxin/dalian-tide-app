@@ -1,0 +1,107 @@
+:root {
+  /* 品牌渐变（Hero / 主按钮） */
+  --brand-from: #1666c9;
+  --brand-to: #20c4b0;
+
+  /* 背景 / 卡片 / 文本 */
+  --bg: #f5f9fd;
+  --card: #ffffff;
+  --text: #0f2747;
+  --text-sub: #5b6675;
+  --border: #eeeFF5;
+
+  /* 潮汐四段语义色（对应设计稿图例） */
+  --tide-forbidden: #e5484d; /* 禁止 */
+  --tide-ok: #3b82f6; /* 可赶海 */
+  --tide-best: #18a957; /* 最佳 */
+  --tide-return: #f59e0b; /* 推荐回程 */
+
+  --radius: 16px;
+  --shadow: 0 3px 10px rgba(15, 39, 71, 0.08);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Noto Sans SC', system-ui, -apple-system, 'PingFang SC', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 移动端容器：390 宽居中，模拟手机 */
+.app-shell {
+  position: relative;
+  max-width: 390px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+}
+
+.app-main {
+  flex: 1;
+  overflow-y: auto;
+  padding-bottom: 64px; /* 给底部 Tab 留位 */
+}
+
+/* 底部 3 Tab */
+.tab-bar {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 390px;
+  height: 64px;
+  display: flex;
+  background: #fff;
+  border-top: 1px solid var(--border);
+}
+
+.tab-bar button {
+  flex: 1;
+  border: none;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  font-size: 13px;
+  color: #949ca8;
+  cursor: pointer;
+}
+
+.tab-bar button.active {
+  color: var(--brand-from);
+  font-weight: 700;
+}
+
+/* 通用卡片 */
+.card {
+  background: var(--card);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 14px;
+  margin: 6px 14px;
+}
+
+/* 主按钮 */
+.btn-primary {
+  width: calc(100% - 28px);
+  margin: 6px 14px;
+  height: 51px;
+  border: none;
+  border-radius: 14px;
+  background: linear-gradient(135deg, var(--brand-from), var(--brand-to));
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
